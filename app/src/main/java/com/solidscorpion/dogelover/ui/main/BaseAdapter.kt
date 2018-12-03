@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 
 class BaseAdapter(val data: MutableList<String>, private val ctx: Context) :
     RecyclerView.Adapter<BaseAdapter.BaseViewHolder>() {
-    val layoutInflater = LayoutInflater.from(ctx)
+    private val layoutInflater: LayoutInflater = LayoutInflater.from(ctx)
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BaseViewHolder {
         val view = layoutInflater.inflate(android.R.layout.simple_list_item_1, parent, false)
         return BaseViewHolder(view)

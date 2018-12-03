@@ -2,6 +2,7 @@ package com.solidscorpion.dogelover
 
 import android.app.Activity
 import android.app.Application
+import com.facebook.stetho.Stetho
 import com.solidscorpion.dogelover.di.DaggerAppComponent
 import dagger.android.AndroidInjector
 import dagger.android.DispatchingAndroidInjector
@@ -16,6 +17,9 @@ class DogeLoverApp : Application(), HasActivityInjector {
 
     override fun onCreate() {
         super.onCreate()
+        if (BuildConfig.DEBUG) {
+            Stetho.initializeWithDefaults(this)
+        }
         DaggerAppComponent.builder()
             .application(this)
             .build()

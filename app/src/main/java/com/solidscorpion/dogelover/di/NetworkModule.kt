@@ -1,5 +1,6 @@
 package com.solidscorpion.dogelover.di
 
+import com.facebook.stetho.okhttp3.StethoInterceptor
 import com.jakewharton.retrofit2.adapter.kotlin.coroutines.CoroutineCallAdapterFactory
 import com.solidscorpion.dogelover.Constants
 import dagger.Module
@@ -14,6 +15,7 @@ class NetworkModule {
     @Provides
     fun provideOkHttp(): OkHttpClient {
         return OkHttpClient.Builder()
+            .addInterceptor(StethoInterceptor())
             .build()
     }
 
