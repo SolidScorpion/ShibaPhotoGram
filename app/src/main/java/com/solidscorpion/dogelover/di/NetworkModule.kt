@@ -1,5 +1,6 @@
 package com.solidscorpion.dogelover.di
 
+import com.jakewharton.retrofit2.adapter.kotlin.coroutines.CoroutineCallAdapterFactory
 import com.solidscorpion.dogelover.Constants
 import dagger.Module
 import dagger.Provides
@@ -21,6 +22,7 @@ class NetworkModule {
     fun provideflickr(okHttpClient: OkHttpClient): Retrofit {
         return Retrofit.Builder()
             .addConverterFactory(MoshiConverterFactory.create())
+            .addCallAdapterFactory(CoroutineCallAdapterFactory())
             .baseUrl(Constants.FLICKR_API)
             .client(okHttpClient)
             .build()

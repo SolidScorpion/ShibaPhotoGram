@@ -1,6 +1,6 @@
 package com.solidscorpion.dogelover.di
 
-import com.solidscorpion.dogelover.ui.MainActivity
+import com.solidscorpion.dogelover.ui.main.MainActivity
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
 
