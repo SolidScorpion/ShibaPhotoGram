@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
-class BaseAdapter(val data: MutableList<String>, private val ctx: Context) :
+class BaseAdapter(val data: MutableList<String>, ctx: Context) :
     RecyclerView.Adapter<BaseAdapter.BaseViewHolder>() {
     private val layoutInflater: LayoutInflater = LayoutInflater.from(ctx)
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BaseViewHolder {

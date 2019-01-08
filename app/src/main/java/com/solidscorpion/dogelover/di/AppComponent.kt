@@ -4,13 +4,13 @@ import android.app.Application
 import com.solidscorpion.dogelover.DogeLoverApp
 import dagger.BindsInstance
 import dagger.Component
-import dagger.android.support.AndroidSupportInjectionModule
+import dagger.android.AndroidInjectionModule
 import javax.inject.Singleton
 
 @Singleton
 @Component(
     modules =
-    [AndroidSupportInjectionModule::class,
+    [AndroidInjectionModule::class,
         AppModule::class, ActivityProviderModule::class]
 )
 interface AppComponent {
