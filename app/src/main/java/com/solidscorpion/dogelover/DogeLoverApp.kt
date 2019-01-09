@@ -20,8 +20,7 @@ class DogeLoverApp : Application(), HasActivityInjector {
         if (BuildConfig.DEBUG) {
             Stetho.initializeWithDefaults(this)
         }
-        DaggerAppComponent.builder()
-            .application(this)
+        DaggerAppComponent.builder().application(this)
             .build()
             .inject(this)
     }
