@@ -4,6 +4,7 @@ package com.solidscorpion.dogelover.ui.main
 import android.os.Bundle
 import android.view.View
 import androidx.lifecycle.Observer
+import androidx.navigation.fragment.NavHostFragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.snackbar.Snackbar
 import com.solidscorpion.dogelover.DogeLoverViewModel
@@ -26,6 +27,9 @@ class StartFragment : BaseFragment<FragmentStartBinding>() {
         binding.recyclerView.adapter = BaseAdapter(mutableListOf(), requireContext())
         binding.button2.setOnClickListener {
             viewModel.search(binding.editText.text.toString())
+        }
+        binding.btnMoveNext.setOnClickListener {
+            NavHostFragment.findNavController(this).navigate(R.id.action_startFragment_to_sampleFragment)
         }
     }
 

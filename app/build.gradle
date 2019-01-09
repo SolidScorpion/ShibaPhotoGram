@@ -12,7 +12,7 @@ android {
     }
     compileSdkVersion 28
     defaultConfig {
-        applicationId "com.solidscorpion.shibaphotogram"
+        applicationId "com.solidscorpion.dogelover"
         minSdkVersion 21
         targetSdkVersion 28
         versionCode 1
