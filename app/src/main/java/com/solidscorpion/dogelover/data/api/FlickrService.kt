@@ -1,4 +1,4 @@
-package com.solidscorpion.dogelover.api
+package com.solidscorpion.dogelover.data.api
 
 import kotlinx.coroutines.Deferred
 import okhttp3.ResponseBody

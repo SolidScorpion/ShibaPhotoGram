@@ -1,4 +1,4 @@
-package com.solidscorpion.dogelover.database
+package com.solidscorpion.dogelover.data.database
 
 import androidx.room.Dao
 import androidx.room.Delete

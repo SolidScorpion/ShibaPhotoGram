@@ -1,8 +1,11 @@
 package com.solidscorpion.dogelover.di
 
 import android.app.Application
+import android.content.Context
+import android.content.SharedPreferences
 import androidx.room.Room
-import com.solidscorpion.dogelover.database.AppDb
+import com.solidscorpion.dogelover.Constants
+import com.solidscorpion.dogelover.data.database.AppDb
 import com.solidscorpion.dogelover.repo.RepoImpl
 import com.solidscorpion.dogelover.repo.Repository
 import dagger.Module
@@ -22,5 +25,11 @@ class AppModule {
         return Room.databaseBuilder(app, AppDb::class.java, "dogo-db")
             .fallbackToDestructiveMigration()
             .build()
+    }
+
+    @Provides
+    @Singleton
+    fun providePreferences(app: Application): SharedPreferences {
+        return app.getSharedPreferences(Constants.PREF_NAME, Context.MODE_PRIVATE)
     }
 }

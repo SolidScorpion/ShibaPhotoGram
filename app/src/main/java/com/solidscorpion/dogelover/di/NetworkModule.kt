@@ -3,13 +3,12 @@ package com.solidscorpion.dogelover.di
 import com.facebook.stetho.okhttp3.StethoInterceptor
 import com.jakewharton.retrofit2.adapter.kotlin.coroutines.CoroutineCallAdapterFactory
 import com.solidscorpion.dogelover.Constants
-import com.solidscorpion.dogelover.api.FlickrService
+import com.solidscorpion.dogelover.data.api.FlickrService
 import dagger.Module
 import dagger.Provides
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
-import javax.inject.Named
 
 @Module
 class NetworkModule {
@@ -21,7 +20,6 @@ class NetworkModule {
     }
 
     @Provides
-    @Named("flickr")
     fun provideflickrRetrofit(okHttpClient: OkHttpClient): Retrofit {
         return Retrofit.Builder()
             .addConverterFactory(MoshiConverterFactory.create())
@@ -33,7 +31,7 @@ class NetworkModule {
     }
 
     @Provides
-    fun provideFlickrService(@Named("flickr") retrofit: Retrofit): FlickrService {
+    fun provideFlickrService(retrofit: Retrofit): FlickrService {
         return retrofit.create(FlickrService::class.java)
     }
 }
